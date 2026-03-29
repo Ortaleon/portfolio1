@@ -1,27 +1,26 @@
 :root{
 //  объявляем базовые переменные макета
-  --color-dark: #000;
+  --color-dark: rgb(2, 2, 2);
   --color-light: #fff;
-  --color-accent: blue;
-  --color-gray: gray;
-  --color-gray-alt: gray;
+  --color-gray: #ffffff80;
+  --color-gray-alt: #0000009A;
+  --color-accent: #FFD600;
 
-  --border: 1px solid var(--color-dark);
-  --border-radius: 14px;
-  --border-radius-small: 7px;
-  --border-radius-large: 42px;
+  --border-thin: 1px solid var(--color-light);
+  --border: 1.84px solid var(--color-light);
+  --border-bold: 5px solid var(--color-light);
+  --border-radius: 75px;
+  --border-radius-small: 35px;
+  --border-radius-large: 100px;
 
-  --shadow: 0 5px 0 0 var(--color-dark);
+  --font-family-base: 'PP Neue Machina', sans-serif;
 
-  --font-family-base: 'Space Grotesk', sans-serif;
-
-  --container-width: 1240px;
+  --container-width: 1040px;
+  --container-width-alt: 1280px;
   --container-padding-x: 20px;
 
-  --section-padding-y: 70px;
-
-  --input-height: 59px;
-  --button-height: 68px;
+  --input-height: 48px;
+  --button-height: 48px;
 
   --transition-duration: 0.2s;
 }

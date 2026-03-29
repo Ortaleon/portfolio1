@@ -1,0 +1,62 @@
+.project-card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.87em;
+
+  @include mobile{
+    flex-direction: column;
+  }
+
+  &__number{
+    background-color: var(--color-accent);
+    flex-shrink: 0;
+    text-align: center;
+    align-content: center;
+    color: var(--color-dark);
+
+    @include square(2.9em);
+    @include fluid-text(50,23);
+    @include mobile{
+      align-self: start;
+    }
+  }
+
+  &__image{
+    height: auto;
+    width: 100%;
+    min-width: 16.93em;
+
+    @include mobile{
+      width: 80%;
+    }
+  }
+
+  &__body{
+    margin-inline: 1em;
+    min-width: 21.5em;
+    color: var(--color-dark);
+    background-color: var(--color-light);
+    padding: 2.62em 2.62em 4.8em;
+
+    @include mobile-above{
+      margin: 0;
+      align-self: end;
+      translate: 0 9.3em;
+    }
+  }
+
+  &__title{
+    padding-bottom: 1em;
+  }
+  &__subtitle{
+    font-weight: 300;
+  }
+  &__tagline{
+    line-height: 1.2;
+    padding-bottom: 0.57em;
+  }
+  &__description{
+    @include fluid-text(20,14);
+  }
+}

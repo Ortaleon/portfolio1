@@ -1,0 +1,54 @@
+.skills{
+  position: relative;
+
+  &::before,
+  &::after{
+    content: '';
+    display: block;
+    position: absolute;
+    background-color: var(--color-light);
+    height: 1px;
+  }
+  &::before{
+    top: -2.27em;
+    width: 70%;
+  }
+  &::after{
+    width: 50%;
+    right: 0;
+    bottom: -2.3em;
+  }
+
+  &__inner{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+  }
+
+  &__list{
+    display: flex;
+    align-items: center;
+    column-gap: 1.6em;
+
+    @include fluid-text(30, 15);
+    &:nth-child(odd){
+      translate: -150%;
+    }
+  }
+
+  &__item{
+    flex-shrink: 0;
+
+    &:nth-child(even){
+      color: var(--color-gray);
+      font-weight: 600;
+    }
+
+    &:nth-child(odd){
+      border: var(--border);
+      border-radius: var(--border-radius);
+      padding: 0.43em 1.5em;
+    }
+  }
+}

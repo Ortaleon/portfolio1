@@ -1,0 +1,15 @@
+.logo{
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  @include fluid-text(22,12);
+
+  &__author{
+    &-name{
+      color: var(--color-gray);
+    }
+    &-surname{
+      margin-left: 1.9em;
+    }
+  }
+}

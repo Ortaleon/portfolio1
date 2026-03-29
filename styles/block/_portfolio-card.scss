@@ -1,0 +1,34 @@
+.portfolio-card{
+  border-radius: var(--border-radius-small);
+  position: relative;
+  width: 100%;
+  transition-duration: var(--transition-duration);
+
+  &:hover{
+    box-shadow: 0 0 20px 1px var(--color-light);
+  }
+
+  &__image{
+    min-width: 100%;
+    border-radius: var(--border-radius-small);
+    @include mobile{
+      min-height: 13em;
+    };
+  }
+  &__info{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--color-gray-alt);
+    border-radius: 0 0 var(--border-radius-small) var(--border-radius-small);
+    padding-block: 1.37em;
+    padding-left: 3.4em;
+  }
+  &__subtitle{
+    @include fluid-text(14,14);
+  }
+  &__title{
+    @include fluid-text(25,18);
+  }
+
+}

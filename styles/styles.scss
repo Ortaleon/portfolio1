@@ -1,1 +1,12 @@
-@import 'fonts', 'globals', 'media', 'mixins', 'normalize', 'utils', 'variables';
+@import 'fonts', 'mixins','globals', 'media', 'normalize', 'utils', 'variables';
+
+@import 'block/header',
+        'block/hero',
+        'block/skills',
+        'block/projects',
+        'block/project-card',
+        'block/about-me',
+        'block/portfolio',
+        'block/portfolio-card',
+        'block/footer',
+        'block/logo';

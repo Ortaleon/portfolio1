@@ -1,6 +1,7 @@
 //добавляем резиновый текст *1440 ширина по макету
 @mixin fluid-text($max: 48, $min: 16){
-  font-size: clamp(#{$min}px, #{$max / 1440+100}vw, #{$max}px);
+  $vw-value: ($max / 1440) * 100;
+  font-size: clamp(#{$min}px, #{$vw-value}vw, #{$max}px);
 }
 
 
@@ -19,7 +20,7 @@
   border: none;
 }
 
-@mixin flex-center{$isInline: false}{
+@mixin flex-center($isInline: false){
   @if $isInline {
     display: inline-flex;
   }

@@ -1,0 +1,18 @@
+.projects{
+  padding-block: 9em;
+
+  &__title{
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 1.5em;
+  }
+  &__list{
+    display: flex;
+    flex-direction: column;
+    row-gap: 13.05em;
+
+    @include mobile{
+      row-gap: 3.1em;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.hero{
+  background: url('/images/hero-background.png') center/contain no-repeat;
+  padding-block: 1.8em;
+  @include fluid-text(80, 35);
+
+  &__title{
+    width: 100%;
+    max-width: 761px;
+    margin-inline: auto;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  &__text{
+
+    &--accent{
+      position: relative;
+      top:-0.2em;
+      border: var(--border-bold);
+      border-radius: var(--border-radius-large);
+      padding: 0.36em 1.2em;
+      margin-left: .5em;
+
+      @include fluid-text(50, 18);
+
+      @include mobile{
+        border: var(--border);
+      };
+    }
+
+    &--highlight{
+      margin-left: 1.9em;
+      @include fluid-text(100,35);
+    }
+  }
+}

@@ -1,0 +1,60 @@
+.about-me{
+  font-style: italic;
+
+  @include mobile-above{
+    margin-block: 10em;
+  }
+
+  &__border{
+    position: relative;
+    height: 2px;
+    background-color: var(--color-light);
+
+    &--up::before, &--up::after, &--down::before, &--down::after{
+      position: absolute;
+      @include fluid-text(25, 17);
+    }
+    &--up::before, &--up::after{
+      content: 'About';
+      top:  18px;
+    }
+    &--up::after, &--down::after{
+      font-weight: 600;
+      right: 0;
+    }
+    &--down::before, &--down::after{
+      content: 'Me';
+      top:-40px;
+    }
+  }
+  &__description{
+    margin-top: 1.3em;
+    line-height: 117%;
+    @include fluid-text(65, 40);
+  }
+  &__link{
+    transition-duration: var(--transition-duration);
+    position: relative;
+    margin-block: 2.7em;
+    margin-left: 3.8em;
+    padding: 0.6em 1.2em;
+    border: var(--border);
+    border-radius: var(--border-radius-large);
+
+    @include fluid-text(37,22);
+
+    &:hover{
+      box-shadow: 0 0 20px 1px var(--color-light);
+    }
+
+    &::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -1.5em;
+      translate: -100% -50%;
+      background: url('../../images/svg/Arrow.svg') center / contain no-repeat;
+      @include square(2.7em);
+    }
+  }
+}

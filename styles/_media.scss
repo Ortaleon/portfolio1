@@ -4,8 +4,9 @@ $desktop: 1280px;
 $tablet-above: 1024px;
 $tablet: 1023px;
 
-$mobile-above: 768px;
-$mobile: 767px;
+$mobile-above: 769px;
+$mobile: 768px;
+$mobile-s: 360px;
 
 @mixin desktop-above{
   @media (min-width: $desktop-above){
@@ -37,6 +38,7 @@ $mobile: 767px;
     @content;
   }
 }
+
 
 //убераем эффект залипания hover на моб. версии
 //при вызове: @include hover{} вместо &:hover

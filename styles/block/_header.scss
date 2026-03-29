@@ -1,0 +1,22 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 35px;
+
+  &__info{
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    @include fluid-text(22,12);
+
+  }
+
+  &__info{
+    text-align: right;
+
+    &-location{
+      color: var(--color-gray);
+      margin-right: 1.9em;
+    }
+  }
+}
