@@ -39,9 +39,6 @@ $mobile-s: 360px;
   }
 }
 
-
-//убераем эффект залипания hover на моб. версии
-//при вызове: @include hover{} вместо &:hover
 @mixin hover{
   @media (hover: hover) {
     &:hover {
@@ -55,12 +52,3 @@ $mobile-s: 360px;
     }
   }
 }
-
-//пример вызова медиа-запроса:
-//.element{
-//  color:#000;
-//
-//  @include desktop{
-//    color: #fff;
-//  }
-//}

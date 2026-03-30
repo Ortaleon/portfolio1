@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: "PP Neue Machina";
   src: url("../fonts/PPNeueMachina-InktrapLight.woff2") format("woff2");
@@ -35,12 +34,12 @@
   font-display: swap;
 }
 body {
-  font-size: clamp(16px, 0.8333333333vw, 12px);
   font-family: var(--font-family-base);
   font-weight: 400;
   line-height: 1.17;
   color: var(--color-light);
   background-color: var(--color-dark);
+  font-size: clamp(16px, 0.8333333333vw, 12px);
 }
 
 a,
@@ -49,6 +48,10 @@ input,
 textarea,
 svg * {
   transition-duration: var(--transition-duration);
+}
+
+input:focus {
+  outline: none;
 }
 
 a {
@@ -64,36 +67,21 @@ h2, .h2, h3 {
   font-size: clamp(30px, 3.125vw, 45px);
 }
 
-/**
-  Нормализация блочной модели
- */
 *,
 ::before,
 ::after {
   box-sizing: border-box;
 }
 
-/**
-  Убираем внутренние отступы слева тегам списков,
-  у которых есть атрибут class
- */
 :where(ul, ol):where([class]) {
   padding-left: 0;
 }
 
-/**
-  Убираем внешние отступы body и двум другим тегам,
-  у которых есть атрибут class
- */
 body,
 :where(blockquote, figure, fieldset):where([class]) {
   margin: 0;
 }
 
-/**
-  Убираем внешние отступы вертикали нужным тегам,
-  у которых есть атрибут class
- */
 :where(h1,
 h2,
 h3,
@@ -116,10 +104,6 @@ dl):where([class]) {
   border: none;
 }
 
-/**
-  Убираем стандартный маркер маркированному списку,
-  у которого есть атрибут class
- */
 :where(ul[class]) {
   list-style: none;
 }
@@ -128,27 +112,15 @@ dl):where([class]) {
   font-style: normal;
 }
 
-/**
-  Обнуляем вертикальные внешние отступы параграфа,
-  объявляем локальную переменную для внешнего отступа вниз,
-  чтобы избежать взаимодействие с более сложным селектором
- */
 p {
   --paragraphMarginBottom: 24px;
   margin-block: 0;
 }
 
-/**
-  Внешний отступ вниз для параграфа без атрибута class,
-  который расположен не последним среди своих соседних элементов
- */
 p:where(:not([class]):not(:last-child)) {
   margin-bottom: var(--paragraphMarginBottom);
 }
 
-/**
-  Упрощаем работу с изображениями и видео
- */
 img,
 video {
   display: block;
@@ -156,9 +128,6 @@ video {
   height: auto;
 }
 
-/**
-  Наследуем свойства шрифт для полей ввода
- */
 input,
 textarea,
 select,
@@ -167,95 +136,48 @@ button {
 }
 
 html {
-  /**
-    Пригодится в большинстве ситуаций
-    (когда, например, нужно будет "прижать" футер к низу сайта)
-   */
   height: 100%;
-  /**
-    Убираем скачок интерфейса по горизонтали
-    при появлении / исчезновении скроллбара
-   */
   scrollbar-gutter: stable;
-  /**
-    Плавный скролл
-   */
   scroll-behavior: smooth;
 }
 
 body {
-  /**
-    Пригодится в большинстве ситуаций
-    (когда, например, нужно будет "прижать" футер к низу сайта)
-   */
   min-height: 100%;
-  /**
-    Унифицированный интерлиньяж
-   */
   line-height: 1.5;
 }
 
-/**
-  Нормализация высоты элемента ссылки при его инспектировании в DevTools
- */
 a:where([class]) {
   display: inline-flex;
 }
 
-/**
-  Курсор-рука при наведении на элемент
- */
 button,
 label {
   cursor: pointer;
 }
 
-/**
-  Убирает серую подсветку при тапе на мобильных устройствах (iOS/Android)
- */
 button {
   -webkit-tap-highlight-color: transparent;
 }
 
-/**
-  Приводим к единому цвету svg-элементы
-  (за исключением тех, у которых уже указан
-  атрибут fill со значением 'none' или начинается с 'url')
- */
 :where([fill]:not([fill=none],
 [fill^=url])) {
   fill: currentColor;
 }
 
-/**
-  Приводим к единому цвету svg-элементы
-  (за исключением тех, у которых уже указан
-  атрибут stroke со значением 'none')
- */
 :where([stroke]:not([stroke=none],
 [stroke^=url])) {
   stroke: currentColor;
 }
 
-/**
-  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
- */
 svg * {
   transition-property: fill, stroke;
 }
 
-/**
-  Приведение рамок таблиц в классический 'collapse' вид
- */
 :where(table) {
   border-collapse: collapse;
   border-color: currentColor;
 }
 
-/**
-  Удаляем все анимации и переходы для людей,
-  которые предпочитают их не использовать
- */
 @media (prefers-reduced-motion: reduce) {
   *,
   ::before,
@@ -408,7 +330,12 @@ svg * {
   font-size: clamp(15px, 2.0833333333vw, 30px);
 }
 .skills__list:nth-child(odd) {
-  translate: -150%;
+  translate: -180% 0;
+}
+@media (max-width: 768px) {
+  .skills__list:nth-child(odd) {
+    translate: -270% 0;
+  }
 }
 .skills__item {
   flex-shrink: 0;
@@ -443,10 +370,10 @@ svg * {
 }
 
 .project-card {
+  gap: 1.87em;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1.87em;
 }
 @media (max-width: 768px) {
   .project-card {

@@ -1,9 +1,7 @@
 .project-card{
-  display: flex;
-  justify-content: center;
-  align-items: center;
   gap: 1.87em;
 
+  @include flex-center();
   @include mobile{
     flex-direction: column;
   }

@@ -33,7 +33,10 @@
 
     @include fluid-text(30, 15);
     &:nth-child(odd){
-      translate: -150%;
+      translate: -180% 0;
+      @include mobile{
+        translate: -270% 0;
+      }
     }
   }
 
