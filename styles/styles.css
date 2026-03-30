@@ -268,7 +268,7 @@ svg * {
 }
 
 .hero {
-  background: url("/images/hero-background.png") center/contain no-repeat;
+  background: url("../../images/hero-background.png") center/contain no-repeat;
   padding-block: 1.8em;
   font-size: clamp(35px, 5.5555555556vw, 80px);
 }
