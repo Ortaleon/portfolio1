@@ -268,7 +268,7 @@ svg * {
 }
 
 .hero {
-  background: url("/images/hero-background.png") center/contain no-repeat;
+  background: url("../images/hero-background.png") center/contain no-repeat;
   padding-block: 1.8em;
   font-size: clamp(35px, 5.5555555556vw, 80px);
 }
@@ -486,7 +486,7 @@ svg * {
   top: 0;
   left: -1.5em;
   translate: -100% -50%;
-  background: url("/images/svg/Arrow.svg") center/contain no-repeat;
+  background: url("../images/svg/Arrow.svg") center/contain no-repeat;
   width: 2.7em;
   aspect-ratio: 1;
 }

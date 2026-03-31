@@ -1,5 +1,5 @@
 .hero{
-  background: url('/images/hero-background.png') center/contain no-repeat;
+  background: url('../images/hero-background.png') center/contain no-repeat;
   padding-block: 1.8em;
   @include fluid-text(80, 35);
 
